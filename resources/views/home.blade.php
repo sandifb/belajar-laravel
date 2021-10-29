@@ -29,6 +29,11 @@
         const chart = new Chartisan({
             el: '#chart',
             url: "@chart('sample_chart')",
+            hooks: new ChartisanHooks()
+                .title('Penerimaan Per KPP')
+                .legend()
+                .colors()
+                .tooltip(),
         });
     </script>
 @endsection

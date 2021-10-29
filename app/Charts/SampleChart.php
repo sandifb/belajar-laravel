@@ -40,6 +40,6 @@ class SampleChart extends BaseChart
 
         return Chartisan::build()
             ->labels($label)
-            ->dataset('Sample', $dataset);
+            ->dataset('Penerimaan', $dataset);
     }
 }

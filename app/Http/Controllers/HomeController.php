@@ -45,8 +45,7 @@ class HomeController extends Controller
             $dataset[]  = $item->nominal;
         }
 
-        return $label;
-
+        // return $label;
 
         return view('home');
     }
