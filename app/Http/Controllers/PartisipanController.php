@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kpp;
 use App\Models\Partisipan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PartisipanController extends Controller
 {
@@ -28,6 +30,8 @@ class PartisipanController extends Controller
      */
     public function create()
     {
+        $kpp = Kpp::get();
+
         return view('partisipan.create');
     }
 
