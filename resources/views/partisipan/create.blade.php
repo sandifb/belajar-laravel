@@ -27,7 +27,14 @@
                             @csrf
 
                             <label> Nama KPP / KPP ID</label>
-                            <input name="kpp_id" /> <br /><br />
+                            <select name="kpp_id">
+                                <option disabled> - pilih kpp -</option>
+                                @foreach ($kpp as $kpp)
+                                    <option value="{{ $kpp->id }}"> {{ $kpp->kode }} - {{ $kpp->alamat }}</option>
+                                @endforeach
+                            </select>
+
+                            <br /><br />
 
 
 
@@ -38,7 +45,12 @@
                             <input name="email" /> <br /><br />
 
                             <label>Jenis Kelamin </label>
-                            <input name="jenis_kelamin" />
+                            <select name="jenis_kelamin">
+                                <option disabled> - pilih jenis kelamin -</option>
+                                <option value="1" > - Laki laki</option>
+                                <option value="2"> - Perempuan</option>
+                                
+                            </select>
                             <button type="submit"> Simpan </button>
                         </form>
 

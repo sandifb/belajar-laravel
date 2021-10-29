@@ -14,7 +14,11 @@ class KppController extends Controller
      */
     public function index()
     {
+        // Get All data
         $kpp = Kpp::get();
+
+        // Filter dengan where
+        // $kpp = Kpp::where('kode', 212)->where('id', 1)->get();
 
         return view('kpp.index')->with([
             'kpp' => $kpp

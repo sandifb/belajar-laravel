@@ -16,7 +16,11 @@ class PartisipanController extends Controller
      */
     public function index()
     {
-        $partisipan = Partisipan::get();
+        // get all data
+        // $partisipan = Partisipan::get();
+
+        // get all data with paggination
+        $partisipan = Partisipan::paginate(10);
 
         return view('partisipan.index')->with([
             'partisipan' => $partisipan
@@ -32,7 +36,9 @@ class PartisipanController extends Controller
     {
         $kpp = Kpp::get();
 
-        return view('partisipan.create');
+        return view('partisipan.create')->with([
+            'kpp' => $kpp
+        ]);
     }
 
     /**

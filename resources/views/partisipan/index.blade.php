@@ -29,6 +29,8 @@
                             @endforeach
                         </table>
 
+                        {{$partisipan->links()}}
+
                     </div>
                 </div>
             </div>

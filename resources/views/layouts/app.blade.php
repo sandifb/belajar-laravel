@@ -101,6 +101,14 @@
         </main>
 
     </div>
+
+    <!-- Charting library -->
+    <script src="https://unpkg.com/echarts/dist/echarts.min.js"></script>
+    <!-- Chartisan -->
+    <script src="https://unpkg.com/@chartisan/echarts/dist/chartisan_echarts.js"></script>
+
+    @yield('script')
+
 </body>
 
 </html>
