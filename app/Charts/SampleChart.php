@@ -18,7 +18,6 @@ class SampleChart extends BaseChart
      */
     public function handler(Request $request): Chartisan
     {
-
         $data = DB::table('kantor')
             ->join('penerimaan_dummy', 'kantor.kpp', '=', 'penerimaan_dummy.admin')
             ->select(
@@ -31,8 +30,6 @@ class SampleChart extends BaseChart
             ->where('penerimaan_dummy.tahunbayar', 2021)
             ->where('penerimaan_dummy.kdmap', 411121)
             ->get();
-
-
 
         $label = [];
         $dataset = [];
