@@ -19,7 +19,6 @@ class ChartPenerimaan extends BaseChart
     {
         return Chartisan::build()
             ->labels(['First', 'Second', 'Third'])
-            ->dataset('Penerimaan ', [12, 3, 6])
-            ->dataset('Pengeluaran', [12, 3, 9]);
+            ->dataset('Penerimaan ', [12, 3, 6]);
     }
 }

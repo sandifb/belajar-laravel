@@ -43,10 +43,11 @@
             el: '#chartPenerimaan',
             url: "@chart('chart_penerimaan')",
             hooks: new ChartisanHooks()
+                .title('Penerimaan Per KPP')
                 .legend()
-                .colors()
-                .datasets(['line', 'bar'])
-                .tooltip(),
+                .axis(false)
+                .tooltip()
+                .datasets('pie'),
         });
     </script>
 @endsection
