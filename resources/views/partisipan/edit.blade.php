@@ -24,28 +24,31 @@
         </div>
     @endif
 
-    <form method="POST" action="{{ url('kpp/' . $kpp->id . '/update') }}">
+    <form method="POST" action="{{ url('kpp/' . $partisipan->id) . '/update' }}">
         @csrf @method('PUT')
 
-        <label>Kode </label>
-        <input name="kode" readonly value="{{ $kpp->kode }}" /> <br /><br />
+        <label> Nama KPP / KPP ID</label>
+        <input name="kpp_id" value="{{ $partisipan->kpp_id }}" /> <br /><br />
 
-        <label>Alamat </label>
-        <input name="alamat" value="{{ $kpp->alamat }}" /> <br /><br />
+        <label> Nama </label>
+        <input name="nama" value="{{ $partisipan->nama }}" /> <br /><br />
 
-        <label>No. Telp </label>
-        <input name="no_telp" value="{{ $kpp->no_telp }}" />
+        <label> Email </label>
+        <input name="email" value="{{ $partisipan->email }}" /> <br /><br />
+
+        <label>Jenis Kelamin </label>
+        <input name="jenis_kelamin" value="{{ $partisipan->jenis_kelamin }}" />
         <button type="submit"> Update </button>
     </form>
 
-    <a href="{{ url('/kpp') }}">Kembali </a>
+    <a href="{{ url('/partisipan') }}">Kembali </a>
 
 
     <br />
     <br />
     <form onSubmit="return confirm('Yakin akan menghapus ?') " method="POST"
-        action="{{ url('kpp/' . $kpp->id . '/delete') }}">
-        @csrf @method('DELETE')
+        action="{{ url('partisipan/' . $partisipan->id) }}">
+        @csrf @method('delete')
         <button type="submit"> Hapus Data </button>
     </form>
 

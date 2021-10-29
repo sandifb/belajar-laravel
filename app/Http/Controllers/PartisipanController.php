@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kpp;
+use App\Models\Partisipan;
 use Illuminate\Http\Request;
 
-class KppController extends Controller
+class PartisipanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,10 @@ class KppController extends Controller
      */
     public function index()
     {
-        $kpp = Kpp::get();
+        $partisipan = Partisipan::get();
 
-        return view('kpp.index')->with([
-            'kpp' => $kpp
+        return view('partisipan.index')->with([
+            'partisipan' => $partisipan
         ]);
     }
 
@@ -28,7 +28,7 @@ class KppController extends Controller
      */
     public function create()
     {
-        return view('kpp.create');
+        return view('partisipan.create');
     }
 
     /**
@@ -40,22 +40,22 @@ class KppController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'kode'      => 'required|unique:kpps|max:3',
-            'alamat'    => 'required',
+            'nama'          => 'required|max:200',
+            'jenis_kelamin' => 'required',
         ]);
 
-        Kpp::create($request->all());
+        Partisipan::create($request->all());
 
-        return redirect('/kpp');
+        return redirect('/partisipan');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Kpp  $kpp
+     * @param  \App\Models\Partisipan  $partisipan
      * @return \Illuminate\Http\Response
      */
-    public function show(Kpp $kpp)
+    public function show(Partisipan $partisipan)
     {
         //
     }
@@ -63,15 +63,14 @@ class KppController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Kpp  $kpp
+     * @param  \App\Models\Partisipan  $partisipan
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $kpp = Kpp::find($id);
-
-        return view('kpp.edit')->with([
-            'kpp' => $kpp
+        $partisipan = Partisipan::find($id);
+        return view('partisipan.edit')->with([
+            'partisipan' => $partisipan
         ]);
     }
 
@@ -79,32 +78,25 @@ class KppController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Kpp  $kpp
+     * @param  \App\Models\Partisipan  $partisipan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Partisipan $partisipan)
     {
-        $kpp = Kpp::find($id);
-
-        $kpp->update([
-            'alamat'    => $request->alamat,
-            'no_telp'   => $request->no_telp,
-        ]);
-
-        return back();
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Kpp  $kpp
+     * @param  \App\Models\Partisipan  $partisipan
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $kpp = Kpp::find($id);
-        $kpp->delete();
+        $partisipan = Partisipan::find($id);
+        $partisipan->delete();
 
-        return redirect('kpp');
+        return redirect('partisipan');
     }
 }

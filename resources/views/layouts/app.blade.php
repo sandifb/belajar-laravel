@@ -19,6 +19,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('bimtek.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -58,6 +59,10 @@
                         @else
                             
                             <li class="nav-item dropdown">
+                                <a href="{{ url('/partisipan') }}" class="nav-link"> Partisipan </a>
+                            </li>
+
+                            <li class="nav-item dropdown">
                                 <a href="{{ url('/kpp') }}" class="nav-link"> Data Kpp </a>
                             </li>
 
@@ -88,6 +93,7 @@
         <main class="py-4">
             @yield('content')
         </main>
+
     </div>
 </body>
 

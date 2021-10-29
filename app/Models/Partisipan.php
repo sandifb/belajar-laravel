@@ -5,20 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Kpp extends Model
+class Partisipan extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'kode',
-        'alamat',
-        'no_telp',
+        'kpp_id',
+        'nama',
+        'email',
+        'jenis_kelamin',
     ];
 
-    public function partisipans()
+    public function kpp()
     {
-        return $this->hasMany(Partisipan::class);
+        return $this->belongsTo(Kpp::class);
     }
-
-    
 }

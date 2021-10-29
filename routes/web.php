@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\KppController;
+use App\Http\Controllers\PartisipanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,9 +30,16 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
  * Get, Put, Post, Delete
  */
 
-Route::get('kpp',           [KppController::class, 'index']);
-Route::post('kpp',          [KppController::class, 'store']);
 
-Route::get('kpp/create',        [KppController::class, 'create']);
-Route::get('kpp/edit/{id}',     [KppController::class, 'edit']);
-Route::put('kpp/update/{id}',   [KppController::class, 'update']);
+// Cara Detail
+Route::get('kpp',                   [KppController::class, 'index']);
+Route::post('kpp',                  [KppController::class, 'store']);
+
+Route::get('kpp/create',            [KppController::class, 'create']);
+Route::get('kpp/{id}/edit',         [KppController::class, 'edit']);
+Route::put('kpp/{id}/update',       [KppController::class, 'update']);
+Route::delete('kpp/{id}/delete',    [KppController::class, 'destroy']);
+
+
+//Cara Cepat
+Route::resource('partisipan', PartisipanController::class);
