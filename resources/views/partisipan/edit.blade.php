@@ -20,7 +20,7 @@
                             </div>
                         @endif
 
-                        <form method="POST" action="{{ url('kpp/' . $partisipan->id) . '/update' }}">
+                        <form method="POST" action="{{ url('partisipan/' . $partisipan->id) }}">
                             @csrf @method('PUT')
 
                             <label> Nama KPP / KPP ID</label>

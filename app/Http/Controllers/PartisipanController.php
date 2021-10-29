@@ -91,9 +91,16 @@ class PartisipanController extends Controller
      * @param  \App\Models\Partisipan  $partisipan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Partisipan $partisipan)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama'          => 'required|max:200',
+            'jenis_kelamin' => 'required',
+        ]);
+
+        Partisipan::create($request->all());
+
+        return redirect('/partisipan');
     }
 
     /**
