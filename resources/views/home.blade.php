@@ -17,6 +17,8 @@
                         <!-- Chart's container -->
                         <div id="chart" style="height: 300px;"></div>
 
+                        <div id="chartPenerimaan" style="height: 300px;"></div>
+
                     </div>
                 </div>
             </div>
@@ -32,7 +34,18 @@
             hooks: new ChartisanHooks()
                 .title('Penerimaan Per KPP')
                 .legend()
+                .colors('red')
+                .tooltip(),
+        });
+
+
+        const chartPenerimaan = new Chartisan({
+            el: '#chartPenerimaan',
+            url: "@chart('chart_penerimaan')",
+            hooks: new ChartisanHooks()
+                .legend()
                 .colors()
+                .datasets(['line', 'bar'])
                 .tooltip(),
         });
     </script>
